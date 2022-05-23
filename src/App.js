@@ -8,6 +8,7 @@ import Blog from './Pages/Blog/Blog';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/Login/SignUp';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Home />} />
       <Route path='products' element={<Products></Products>}></Route>
+      <Route path='dashboard' element={<Dashboard></Dashboard>}></Route>
       <Route path='blog' element={<Blog></Blog>}></Route>
       <Route path='portfolio' element={<Portfolio></Portfolio>}></Route>
       <Route path='login' element={<Login></Login>}></Route>
