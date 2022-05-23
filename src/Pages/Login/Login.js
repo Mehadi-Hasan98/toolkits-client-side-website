@@ -84,8 +84,7 @@ const Login = () => {
                             {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                         </label>
                     </div>
-
-
+                    {signInError}
                     <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                 </form>
                 <p><small>New to ToolKits? <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
