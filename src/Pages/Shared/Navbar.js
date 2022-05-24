@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Navbar = () => {
@@ -13,15 +13,14 @@ const Navbar = () => {
       };
 
     const menuItems = <>
-             <li><Link to="/">Home</Link></li>
-             <li><Link to="/products">Products</Link></li>
-             <li><Link to="/dashboard">Dashboard</Link></li>
-             <li><Link to="/blog">Blog</Link></li>
-             <li><Link to="/portfolio">Portfolio</Link></li>
+             <li><NavLink to="/">Home</NavLink></li>
+             <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+             <li><NavLink to="/blog">Blog</NavLink></li>
+             <li><NavLink to="/portfolio">Portfolio</NavLink></li>
              <li>{user ? <button className="btn btn-ghost"  onClick={logout} >Sign Out</button> : <Link to="/login">Login</Link>}</li>
     </>
     return (
-        <div class="navbar bg-base-100">
+        <div class="navbar bg-base-100 px-12 font-mono">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -31,9 +30,9 @@ const Navbar = () => {
              {menuItems}
             </ul>
           </div>
-          <a class="btn btn-ghost normal-case text-xl">ToolKits</a>
+          <a className="btn btn-ghost normal-case text-xl font-mono">ToolKits</a>
         </div>
-        <div class="navbar-center hidden lg:flex">
+        <div class="navbar-end hidden lg:flex">
           <ul class="menu menu-horizontal p-0">
           {menuItems}
           </ul>

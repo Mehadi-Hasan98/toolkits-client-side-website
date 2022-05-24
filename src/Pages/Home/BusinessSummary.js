@@ -3,8 +3,8 @@ import React from "react";
 const BusinessSummary = () => {
   return (
     <>
-    <h2 className="text-3xl font-bold text-center mt-20">Business Summary</h2>
-        <div class="stats shadow w-9/12 ml-32 mt-20 mb-28">
+    <h2 className="text-3xl font-mono font-bold text-center mt-32">Business Summary</h2>
+        <div class="stats shadow w-9/12 ml-32 mt-16 mb-28 font-mono">
       <div class="stat">
         <div class="stat-figure text-primary">
           <svg

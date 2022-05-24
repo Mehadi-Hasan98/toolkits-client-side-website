@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Tools = () => {
     const [products, setProducts] = useState([]);
     useEffect( () => {
-        fetch('products.json')
+        fetch('http://localhost:5000/product')
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])
@@ -19,7 +19,7 @@ const Tools = () => {
   <figure class="px-10 pt-10">
     <img style={{height: "200px"}} src={product.img} alt="tools" class="rounded-xl" />
   </figure>
-  <div class="card-body items-center text-center">
+  <div class="card-body items-center text-center font-mono">
     <h2 class="card-title">{product.name}</h2>
     <h6>Price: ${product.price}</h6>
     <h6>Stock: {product.stock}</h6>
