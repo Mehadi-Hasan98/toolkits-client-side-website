@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Tools = () => {
     const [products, setProducts] = useState([]);
+    const navigate = useNavigate();
     useEffect( () => {
         fetch('http://localhost:5000/product')
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])
+
+    const handlePurchase = (id) => {
+        navigate(`/purchase/${id}`);
+    }
+
     return (
         <>
         <h2 className='text-3xl font-mono text-center'>Our Tools</h2>
@@ -26,7 +33,7 @@ const Tools = () => {
     <h6>Min Order: {product.order}</h6>
     <p>{product.description}</p>
     <div class="card-actions">
-      <button class="btn btn-primary">Purchase</button>
+      <button class="btn btn-primary" onClick={ () => handlePurchase(product._id)}>Purchase</button>
     </div>
   </div>
 </div>

@@ -1,27 +1,34 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, NavLink, Outlet } from 'react-router-dom';
+import auth from '../../firebase.init';
+import useAdmin from '../../hooks/useAdmin';
 
 const Dashboard = () => {
+    const [user] = useAuthState(auth);
+    const [admin] = useAdmin(user);
     return (
        <div>
-            <div className="drawer drawer-mobile">
+            <div className="drawer drawer-mobile px-12">
             <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
-                <h2 className='text-2xl font-bold text-purple-500'>Welcome to your Dashboard</h2>
+                {/* <h2 className='text-2xl text-center font-bold text-purple-500 mb-10 mt-10'>Welcome to your Dashboard</h2> */}
                 <Outlet></Outlet>
             </div>
             <div className="drawer-side">
                 <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
-                <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
+                <ul className="menu font-mono p-4 font-semibold overflow-y-auto w-64 bg-base-100 text-base-content">
                     {/* <!-- Sidebar content here --> */}
-                    <li><Link to="/dashboard">My Orders</Link></li>
-                    <li><Link to="/dashboard/addreview">Add a Review</Link></li>
-                    <li><Link to="/dashboard/myprofile">My Profile</Link></li>
-                    {/* { <>
-                        <li><Link to="/dashboard/users">All Users</Link></li>
-                        <li><Link to="/dashboard/addDoctor">Add a Doctor</Link></li>
-                        <li><Link to="/dashboard/manageDoctor">Manage Doctors</Link></li>
-                    </>} */}
+                    <li><NavLink to="/dashboard">My Orders</NavLink></li>
+                    <li><NavLink to="/dashboard/addreview">Add Reviews</NavLink></li>
+                    <li><NavLink to="/dashboard/myprofile">My Profile</NavLink></li>
+                    {admin &&  <>
+                        <li><NavLink to="/dashboard/makeAdmin">Make Admin</NavLink></li>
+                        <li><NavLink to="/dashboard/addProducts">Add Products</NavLink></li>
+                        <li><NavLink to="/dashboard/manageProducts">Manage Products</NavLink></li>
+                        <li><NavLink to="/dashboard/manageOrders">Manage All Orders</NavLink></li>
+                    </>
+                    }
                 </ul>
 
             </div>
