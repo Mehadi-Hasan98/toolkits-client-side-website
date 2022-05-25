@@ -1,22 +1,36 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const AddProducts = () => {
     const { register, handleSubmit, reset } = useForm();
     const [user] = useAuthState(auth);
 
-    const onSubmitFrom = data => {
-
-    }
+    const onSubmitForm = data =>{
+        const url = `http://localhost:5000/product`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        
+        .then(res=> res.json())
+        .then(result => 
+          console.log(result))
+          toast("Item added successfully");
+          reset();
+      }
 
     return (
-        <div>
+        <div className='font-mono'>
             <h2 className='text-2xl font-mono font-bold text-center text-emerald-600 mt-16'>Add Products</h2>
             <form
           className="flex flex-col w-80 mx-auto mt-12 mb-12 form"
-          onSubmit={handleSubmit(onSubmitFrom)}
+          onSubmit={handleSubmit(onSubmitForm)}
         >
           <input
             className="w-80 rounded border-2 border-primary  mb-5 py-4 px-10"
@@ -37,17 +51,17 @@ const AddProducts = () => {
           <input
             className="w-80 rounded border-2 border-primary  mb-5 py-4 px-10"
             placeholder="Enter Price" type="number"
-            {...register("quantity", { required: true })}
+            {...register("price", { required: true })}
           />
           <input
             className="w-80 rounded border-2 border-primary  mb-5 py-4 px-10"
             placeholder="Enter Product Stock" type="number"
-            {...register("quantity", { required: true })}
+            {...register("stock", { required: true })}
           />
           <input
             className="w-80 rounded border-2 border-primary  mb-5 py-4 px-10"
             placeholder="Enter Minimum Order" type="number"
-            {...register("quantity", { required: true })}
+            {...register("order", { required: true })}
           />
           {/* <input
             className="w-80 rounded border-2 border-primary  mb-5 py-4 px-10"

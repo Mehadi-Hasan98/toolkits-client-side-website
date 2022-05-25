@@ -14,7 +14,7 @@ const Reviews = () => {
       </h2>
 
       <div className="grid sm:grid-cols-1 lg:grid-cols-3 md:px-24">
-        {reviews.map((review) => (
+        {reviews.slice(0, 6).map((review) => (
           <div key={review.id}>
             <div style={{height: "400px"}} class="card w-80 bg-base-100 shadow-xl mt-12 font-mono">
               <figure class="px-10 pt-10">

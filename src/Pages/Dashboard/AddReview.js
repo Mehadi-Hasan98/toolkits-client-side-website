@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const AddReview = () => {
@@ -8,7 +9,20 @@ const AddReview = () => {
     const [user] = useAuthState(auth);
 
     const onSubmitFrom = data => {
-
+        const url = `http://localhost:5000/review`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        
+        .then(res=> res.json())
+        .then(result => 
+          console.log(result))
+          toast("Review added successfully");
+          reset();
     }
     return (
         <div className="text-center font-mono mt-20 mb-10 h-full">
@@ -50,8 +64,8 @@ const AddReview = () => {
           <input
             className="w-80 rounded border-2 border-primary  mb-5 py-4 px-10"
             placeholder="Rating"
-            type="text"
-            {...register("description", { required: true })}
+            type="number"
+            {...register("rating", { required: true })}
           />
           <input
             className="product-btn rounded bg-primary py-4 mb-16 text-white text-xl"

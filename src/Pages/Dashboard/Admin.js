@@ -12,7 +12,8 @@ const Admin = () => {
     }
     return (
         <div>
-            <div className="overflow-x-auto mt-16  mx-28">
+            <h2 className='text-center text-xl mt-16 font-bold font-mono text-rose-600'>For Admin Purpose Only</h2>
+            <div className="overflow-x-auto mt-10  mx-28">
                 <table className="table w-full border rounded">
                     <thead>
                         <tr>

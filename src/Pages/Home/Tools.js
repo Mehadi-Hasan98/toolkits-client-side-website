@@ -16,13 +16,13 @@ const Tools = () => {
 
     return (
         <>
-        <h2 className='text-3xl font-mono text-center'>Our Tools</h2>
+        <h2 className='text-3xl font-mono text-center text-blue-700'>Our Tools</h2>
         <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:px-28'>
             {
-                products.map(product => <div
+                products.slice(0, 6).map(product => <div
                 key={product.id}
                 >
-                    <div style={{height: "600px"}} class="card w-80 bg-base-100 shadow-xl">
+                    <div style={{height: "600px"}} class="card w-80 bg-base-100 mt-12 shadow-xl">
   <figure class="px-10 pt-10">
     <img style={{height: "200px"}} src={product.img} alt="tools" class="rounded-xl" />
   </figure>
@@ -31,7 +31,7 @@ const Tools = () => {
     <h6>Price: ${product.price}</h6>
     <h6>Stock: {product.stock}</h6>
     <h6>Min Order: {product.order}</h6>
-    <p>{product.description}</p>
+    <p>Description: {product.description}</p>
     <div class="card-actions">
       <button class="btn btn-primary" onClick={ () => handlePurchase(product._id)}>Purchase</button>
     </div>
