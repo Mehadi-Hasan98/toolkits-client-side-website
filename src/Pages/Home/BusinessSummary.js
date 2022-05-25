@@ -1,9 +1,11 @@
 import React from "react";
+import {MdReviews} from 'react-icons/md';
+import {GoTools} from 'react-icons/go';
 
 const BusinessSummary = () => {
   return (
     <>
-    <h2 className="text-3xl font-mono font-bold text-center mt-32">Business Summary</h2>
+    <h2 className="text-3xl font-mono text-blue-700 font-bold text-center mt-32">Business Summary</h2>
         <div class="stats shadow w-9/12 ml-32 mt-16 mb-28 font-mono">
       <div class="stat">
         <div class="stat-figure text-primary">
@@ -28,19 +30,6 @@ const BusinessSummary = () => {
 
       <div class="stat">
         <div class="stat-figure text-secondary">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            class="inline-block w-8 h-8 stroke-current"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M13 10V3L4 14h7v7l9-11h-7z"
-            ></path>
-          </svg>
         </div>
         <div class="stat-title">Annual revenue</div>
         <div class="stat-value text-secondary">$2.6M</div>
@@ -48,19 +37,7 @@ const BusinessSummary = () => {
       </div>
       <div class="stat">
         <div class="stat-figure text-secondary">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            class="inline-block w-8 h-8 stroke-current"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M13 10V3L4 14h7v7l9-11h-7z"
-            ></path>
-          </svg>
+          <MdReviews></MdReviews>
         </div>
         <div class="stat-title">Reviews</div>
         <div class="stat-value text-success">33k+</div>
@@ -68,7 +45,9 @@ const BusinessSummary = () => {
       </div>
 
       <div class="stat">
-        <div class="stat-figure text-secondary"></div>
+        <div class="stat-figure text-secondary">
+          <GoTools></GoTools>
+        </div>
         <div class="stat-title">We use</div>
         <div class="stat-value">50+</div>
         <div class="stat-title">Tools </div>
