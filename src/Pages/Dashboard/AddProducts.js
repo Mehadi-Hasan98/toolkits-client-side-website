@@ -63,12 +63,6 @@ const AddProducts = () => {
             placeholder="Enter Minimum Order" type="number"
             {...register("order", { required: true })}
           />
-          {/* <input
-            className="w-80 rounded border-2 border-primary  mb-5 py-4 px-10"
-            placeholder="description"
-            type="text"
-            {...register("description", { required: true })}
-          /> */}
           <textarea className='w-80 rounded border-2 border-primary  mb-5 py-4 px-10' placeholder='Description' type="text" {...register("description", {required: true})} />
           <input
             className="product-btn rounded bg-primary py-4 text-white text-xl"

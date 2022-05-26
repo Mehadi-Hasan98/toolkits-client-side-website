@@ -7,8 +7,8 @@ import {GiWallet} from 'react-icons/gi';
 const About = () => {
     return (
         <div>
-            <h2 className='text-center text-blue-700 font-mono text-3xl font-bold'>Services we Provide!</h2>
-            <div className='flex mt-10 mb-10 font-mono'>
+            <h2 className='text-center mt-20 text-blue-700 font-mono text-3xl font-bold'>Services we Provide!</h2>
+            <div className='flex mt-10 mb-32 font-mono'>
                 <div className='mx-auto mb-4'>
                 <h4 className='font-bold'><FaCar/>ALL BRANDS</h4>
                  <p>More than 100 brands</p>

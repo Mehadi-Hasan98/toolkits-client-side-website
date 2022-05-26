@@ -17,6 +17,7 @@ import Footer from './Pages/Shared/Footer';
 import Purchase from './Pages/Purchase/Purchase';
 import Admin from './Pages/Dashboard/Admin';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import AddProducts from './Pages/Dashboard/AddProducts';
 import ManageProducts from './Pages/Dashboard/ManageProducts';

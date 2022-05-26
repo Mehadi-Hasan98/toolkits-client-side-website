@@ -3,27 +3,31 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import auth from "../../firebase.init";
 
 const Purchase = () => {
     const { register, handleSubmit, reset } = useForm();
-//   const [user] = useAuthState();
+    const [user] = useAuthState(auth);
 
-//   const onSubmitFrom = data => {
-//     const url = `http://localhost:5000/product`;
-//     fetch(url, {
-//         method: 'POST',
-//         headers: {
-//             'content-type': 'application/json'
-//         },
-//         body: JSON.stringify(data)
-//     })
+  const onSubmitFrom = data => {
+    const url = `http://localhost:5000/order`;
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
     
-//     .then(res=> res.json())
-//     .then(result => 
-//       console.log(result))
-//       toast("Review added successfully");
-//       reset();
-// }
+    .then(res=> res.json())
+    .then(result => {
+        console.log(result)
+        toast("Order added successfully");
+    })
+      
+    reset();
+}
+
 
   const [products, setProducts] = useState([]);
   const {id} = useParams();
@@ -56,35 +60,34 @@ const Purchase = () => {
           <h6>Stock: {products.stock}</h6>
           <h6>Min Order: {products.order}</h6>
           <p>{products.description}</p>
-          <input
-            className="w-72 rounded border-2 border-primary  mb-5 py-4 px-10"
-            placeholder="Update Minimum Order" type="number"
-            {...register("quantity", { required: true })}
-          />
+          <input className="w-72 rounded border-2 border-primary  mb-5 py-4 px-10" type="number" name="Minimum Quantity" placeholder="Enter Update Quantity"/>
           <div className="flex">
           <button className="btn btn-sm border-emerald-400 text-emerald-600 bg-transparent mr-3">Increase</button>
           <button className="btn btn-sm border-emerald-400 text-emerald-600 bg-transparent">Decrease</button>
           </div>
-          {/* <div className="card-actions">
-            <button className="btn btn-primary">Order Now</button>
-          </div> */}
         </div>
       </div>
       <div>
       <form
           className="flex flex-col w-48 mt-20 form"
-        //   onSubmit={handleSubmit(onSubmitFrom)}
+          onSubmit={handleSubmit(onSubmitFrom)}
         >
           <input
             className="w-80 rounded border-2 border-primary  mb-5 py-4 px-10"
             placeholder="Name"
-            // value={user.name}
+            value={user.displayName}
             {...register("name", { required: true })}
           />
           <input
-            className="w-80 rounded  border-2 border-primary  mb-5 py-4 px-10"
-            // value={user.email}
+            className="w-80 rounded  border-2 border-primary  mb-5 py-4 px-10" readOnly
+            value={user.email}
             {...register("email", { required: true })}
+          />
+          <input
+            className="w-80 rounded border-2 border-primary  mb-5 py-4 px-10"
+            placeholder="Product Name"
+            value={products.name}
+            {...register("productName", { required: true })}
           />
           <input
             className="w-80 rounded border-2 border-solid border-primary  mb-5 py-4 px-10"

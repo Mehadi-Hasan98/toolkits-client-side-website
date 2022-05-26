@@ -1,6 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+
 
 const MyOrders = () => {
+    const [myOrders, setMyOrders] = useState([]);
+    const [user] = useAuthState(auth);
+
+    useEffect( () => {
+        const email = user.email;
+        const url = `http://localhost:5000/myitems?email=${email}`
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+        .then(res => res.json())
+        .then(data => setMyOrders(data))
+    }, [user])
+    console.log(myOrders);
     return (
         <div>
             <div className="overflow-x-auto mx-28 mt-16">
@@ -10,59 +29,26 @@ const MyOrders = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Product</th>
-                            <th>Price</th>
                             <th>Pay Order</th>
                             <th>Cancel Order</th>
                         </tr>
                     </thead>
                     <tbody>
-      {/* <!-- row 1 --> */}
-      <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control </td>
-        <td>Blue</td>
-        <td>Blue</td>
-        <td>Blue</td>
-      </tr>
-      {/* <!-- row 2 --> */}
-      <tr>
-        <th>2</th>
-        <td>Hart Hagerty</td>
-        <td>Desktop Support </td>
-        <td>Purple</td>
-        <td>Purple</td>
-        <td>Purple</td>
-      </tr>
-      {/* <!-- row 3 --> */}
-      <tr>
-        <th>3</th>
-        <td>Brice Swyre</td>
-        <td>Tax Accountant</td>
-        <td>Red</td>
-        <td>Red</td>
-        <td>Red</td>
-      </tr>
-      {/* <!-- row 4 --> */}
-      <tr>
-        <th>4</th>
-        <td>Brice Swyre</td>
-        <td>Tax Accountant</td>
-        <td>Red</td>
-        <td>Red</td>
-        <td>Red</td>
-      </tr>
-      {/* <!-- row 5 --> */}
-      <tr>
-        <th>5</th>
-        <td>Brice Swyre</td>
-        <td>Tax Accountant</td>
-        <td>Red</td>
-        <td>Red</td>
-        <td>Red</td>
-      </tr>
+      {
+          myOrders.map(myorder => <tr>
+               <td>
+                      {myorder.name}
+                  </td>
+                  <td>{myorder.email}</td>
+                  <td>{myorder.productName}</td>
+                  <td><button class="btn btn-success btn-xs">Pay</button></td>
+                  <td><button class="btn btn-error btn-xs">Cancel</button></td>
+          </tr>)
+      }
+      
     </tbody>
-                </table>
+
+    </table>
             </div>
         </div>
     );

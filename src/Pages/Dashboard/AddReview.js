@@ -64,7 +64,7 @@ const AddReview = () => {
           <input
             className="w-80 rounded border-2 border-primary  mb-5 py-4 px-10"
             placeholder="Rating"
-            type="number"
+            type="text"
             {...register("rating", { required: true })}
           />
           <input
