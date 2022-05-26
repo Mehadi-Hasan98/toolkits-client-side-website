@@ -1,30 +1,14 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const MyProfile = () => {
+    const [user] = useAuthState(auth);
     return (
         <div>
             <h2 className='text-2xl font-semibold text-emerald-600 text-center text-semiBold font-mono mt-10'>My Profile</h2>
-            <div className="overflow-x-auto mx-28 mt-10">
-        <table className="table w-full">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Product</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* <!-- row 1 --> */}
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control </td>
-              <td>Blue</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+            <h1 className='text-xl text-center mt-10'>Name: {user.displayName}</h1>
+            <h2 className='text-xl text-center mt-10'>Email: {user.email}</h2>
         </div>
     );
 };
