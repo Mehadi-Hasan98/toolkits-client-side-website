@@ -1,8 +1,23 @@
-# Getting Started with Create React App
+# ToolKits
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Toolkits](https://toolkits-c4c51.web.app/).
 
-## Available Scripts
+## Details About This Website
+
+- This is a Manufacturer Website
+- This website is using by React js, Tailwind css, DaisyUi, React hook, firebase etc
+- In this website we have different products and customers review.
+- We have Dashboard for all users and admin.
+- users can add their reviews and updated their profile.
+- In the dashboard an admin can add more products and make admin other users.
+- In My Portfolio Route we have Admin Portfolio.
+
+
+
+
+
+
+
 
 In the project directory, you can run:
 
