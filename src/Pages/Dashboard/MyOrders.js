@@ -19,10 +19,25 @@ const MyOrders = () => {
         .then(res => res.json())
         .then(data => setMyOrders(data))
     }, [user])
+
+    const handleDelete = (id) => {
+        const proceed = window.confirm("Are You Sure?");
+        if (proceed) {
+          const url = `https://blooming-stream-16978.herokuapp.com/order/${id}`;
+          fetch(url, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              const remaining = myOrders.filter((product) => product._id !== id);
+              setMyOrders(remaining);
+            });
+        }
+      };
     console.log(myOrders);
     return (
         <div>
-            <div className="overflow-x-auto mx-28 mt-16">
+            <div className="overflow-x-auto mx-10 mt-16">
                 <table className="table w-full">
                     <thead>
                         <tr>
@@ -42,7 +57,7 @@ const MyOrders = () => {
                   <td>{myorder.email}</td>
                   <td>{myorder.productName}</td>
                   <td><button class="btn btn-success btn-xs">Pay</button></td>
-                  <td><button class="btn btn-error btn-xs">Cancel</button></td>
+                  <td><button onClick={() => handleDelete(myorder._id)} class="btn btn-error btn-xs">Cancel</button></td>
           </tr>)
       }
       

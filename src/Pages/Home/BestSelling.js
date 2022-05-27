@@ -29,7 +29,7 @@ const BestSelling = () => {
     <img src="https://img.freepik.com/free-photo/saw-screws-wooden-board-yellow-background_185193-72132.jpg?t=st=1653467549~exp=1653468149~hmac=78e059a1127da4e738ff618e3fc20426cee8d58363c67847a4fd64953c3ea59b&w=250&h=180" alt="" class="rounded-box" />
   </div>
 </div>
-        </div>
+    </div>
         
        
     );
