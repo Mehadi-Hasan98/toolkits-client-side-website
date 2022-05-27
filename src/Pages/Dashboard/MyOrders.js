@@ -9,7 +9,7 @@ const MyOrders = () => {
 
     useEffect( () => {
         const email = user.email;
-        const url = `http://localhost:5000/myitems?email=${email}`
+        const url = `https://blooming-stream-16978.herokuapp.com/myitems?email=${email}`
         fetch(url, {
             method: 'GET',
             headers: {

@@ -9,7 +9,7 @@ const AddReview = () => {
     const [user] = useAuthState(auth);
 
     const onSubmitFrom = data => {
-        const url = `http://localhost:5000/review`;
+        const url = `https://blooming-stream-16978.herokuapp.com/review`;
         fetch(url, {
             method: 'POST',
             headers: {

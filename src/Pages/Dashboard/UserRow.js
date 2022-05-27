@@ -5,7 +5,7 @@ import {CgDanger} from 'react-icons/cg';
 const UserRow = ({user, refetch}) => {
     const { email, role } = user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://blooming-stream-16978.herokuapp.com/user/admin/${email}`, {
             method: 'PUT'
         })
         .then(res => res.json())

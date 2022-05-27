@@ -10,7 +10,7 @@ const Purchase = () => {
     const [user] = useAuthState(auth);
 
   const onSubmitFrom = data => {
-    const url = `http://localhost:5000/order`;
+    const url = `https://blooming-stream-16978.herokuapp.com/order`;
     fetch(url, {
         method: 'POST',
         headers: {
@@ -32,7 +32,7 @@ const Purchase = () => {
   const [products, setProducts] = useState([]);
   const {id} = useParams();
   useEffect( () => {
-      fetch(`http://localhost:5000/product/${id}`)
+      fetch(`https://blooming-stream-16978.herokuapp.com/product/${id}`)
       .then(res => res.json())
       .then(data => setProducts(data))
   }, [id])
@@ -63,7 +63,7 @@ const Purchase = () => {
           <input className="w-72 rounded border-2 border-primary  mb-5 py-4 px-10" type="number" name="Minimum Quantity" placeholder="Enter Update Quantity"/>
           <div className="flex">
           <button className="btn btn-sm border-emerald-400 text-emerald-600 bg-transparent mr-3">Increase</button>
-          <button className="btn btn-sm border-emerald-400 text-emerald-600 bg-transparent">Decrease</button>
+          <button className="btn btn-sm border-red-400 text-red-600 bg-transparent">Decrease</button>
           </div>
         </div>
       </div>

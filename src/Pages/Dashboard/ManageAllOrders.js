@@ -4,7 +4,7 @@ const ManageAllOrders = () => {
   const [allOrders, setAllOrders] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/order")
+    fetch("https://blooming-stream-16978.herokuapp.com/order")
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
   }, []);

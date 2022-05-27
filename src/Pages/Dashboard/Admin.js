@@ -5,7 +5,7 @@ import UserRow from './UserRow';
 
 
 const Admin = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user')
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://blooming-stream-16978.herokuapp.com/user')
     .then(res => res.json()))
 
     if (isLoading) {

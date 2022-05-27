@@ -7,7 +7,7 @@ const ProductShow = ({ product }) => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You Sure?");
     if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://blooming-stream-16978.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })
