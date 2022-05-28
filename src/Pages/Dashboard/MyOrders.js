@@ -61,7 +61,7 @@ const MyOrders = () => {
                                         <p>Transaction id: <span className='text-success'>{myorder.transactionId}</span></p>
                                     </div>}
                   </td>
-                  <td><button onClick={() => handleDelete(myorder._id)} class="btn btn-error btn-xs">Cancel</button></td>
+                  <td><button onClick={() => handleDelete(myorder._id)} className="btn btn-error btn-xs">Cancel</button></td>
           </tr>)
       }
       

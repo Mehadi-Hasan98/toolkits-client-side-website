@@ -6,14 +6,14 @@ const BusinessSummary = () => {
   return (
     <>
     <h2 className="text-3xl font-mono text-blue-700 font-bold text-center mt-32">Business Summary</h2>
-        <div class="stats shadow w-9/12 ml-32 mt-16 mb-28 font-mono">
-      <div class="stat">
-        <div class="stat-figure text-primary">
+        <div className="stats shadow w-9/12 md:ml-32 ml-10 mt-16 mb-28 font-mono">
+      <div className="stat">
+        <div className="stat-figure text-primary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            class="inline-block w-8 h-8 stroke-current"
+            className="inline-block w-8 h-8 stroke-current"
           >
             <path
               strokeLinecap="round"
@@ -23,34 +23,34 @@ const BusinessSummary = () => {
             ></path>
           </svg>
         </div>
-        <div class="stat-title">We Served</div>
-        <div class="stat-value text-primary">100+</div>
-        <div class="stat-desc">Customers</div>
+        <div className="stat-title">We Served</div>
+        <div className="stat-value text-primary">100+</div>
+        <div className="stat-desc">Customers</div>
       </div>
 
-      <div class="stat">
-        <div class="stat-figure text-secondary">
+      <div className="stat">
+        <div className="stat-figure text-secondary">
         </div>
-        <div class="stat-title">Annual revenue</div>
-        <div class="stat-value text-secondary">$2.6M</div>
-        <div class="stat-desc">21% more than last year</div>
+        <div className="stat-title">Annual revenue</div>
+        <div className="stat-value text-secondary">$2.6M</div>
+        <div className="stat-desc">21% more than last year</div>
       </div>
-      <div class="stat">
-        <div class="stat-figure text-secondary">
+      <div className="stat">
+        <div className="stat-figure text-secondary">
           <MdReviews></MdReviews>
         </div>
-        <div class="stat-title">Reviews</div>
-        <div class="stat-value text-success">33k+</div>
-        <div class="stat-desc">27% more than last month</div>
+        <div className="stat-title">Reviews</div>
+        <div className="stat-value text-success">33k+</div>
+        <div className="stat-desc">27% more than last month</div>
       </div>
 
-      <div class="stat">
-        <div class="stat-figure text-secondary">
+      <div className="stat">
+        <div className="stat-figure text-secondary">
           <GoTools></GoTools>
         </div>
-        <div class="stat-title">We use</div>
-        <div class="stat-value">50+</div>
-        <div class="stat-title">Tools </div>
+        <div className="stat-title">We use</div>
+        <div className="stat-value">50+</div>
+        <div className="stat-title">Tools </div>
       </div>
     </div>
     </>

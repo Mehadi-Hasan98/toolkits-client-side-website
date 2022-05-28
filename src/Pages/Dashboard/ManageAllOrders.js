@@ -28,10 +28,10 @@ const ManageAllOrders = () => {
                 <td>{myorder.email}</td>
                 <td>{myorder.productName}</td>
                 <td>
-                  <button class="btn btn-success btn-xs">Pay</button>
+                  <button className="btn btn-success btn-xs">Pay</button>
                 </td>
                 <td>
-                  <button class="btn btn-error btn-xs">Cancel</button>
+                  <button className="btn btn-error btn-xs">Cancel</button>
                 </td>
               </tr>
             ))}

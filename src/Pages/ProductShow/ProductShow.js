@@ -25,7 +25,7 @@ const ProductShow = ({ product }) => {
         style={{ height: "550px" }}
         className="card w-80 bg-base-100 mt-10 mb-16 shadow-xl"
       >
-        <figure class="px-10 pt-10">
+        <figure className="px-10 pt-10">
           <img
             style={{ height: "200px" }}
             src={product.img}

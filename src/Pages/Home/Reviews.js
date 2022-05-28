@@ -17,16 +17,16 @@ const Reviews = () => {
       <div className="grid sm:grid-cols-1 lg:grid-cols-3 md:px-24">
         {reverse.map((review) => (
           <div key={review.id}>
-            <div style={{height: "400px"}} class="card w-80 bg-base-100 shadow-xl mt-12 font-mono">
-              <figure class="px-10 pt-10">
+            <div style={{height: "400px"}} className="card mx-auto w-9/12 bg-base-100 shadow-xl mt-12 font-mono">
+              <figure className="px-10 pt-10">
                 <img
                   src={review.img}
                   alt="Review"
-                  class="rounded-xl"
+                  className="rounded-xl"
                 />
               </figure>
-              <div class="card-body items-center text-center">
-                <h2 class="card-title">Name: {review.name}</h2>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">Name: {review.name}</h2>
                 <p>Review: {review.description}</p>
                 <p>Rating: {review.rating}</p>
               </div>
