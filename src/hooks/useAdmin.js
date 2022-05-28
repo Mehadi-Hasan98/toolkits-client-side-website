@@ -7,7 +7,8 @@ const useAdmin = user => {
         const email = user?.email;
         if(email){
             fetch(`https://blooming-stream-16978.herokuapp.com/admin/${email}`, {
-                method:'GET'
+                method:'GET',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             })
             .then(res=>res.json())
             .then(data => {

@@ -10,7 +10,7 @@ const ManageAllOrders = () => {
   }, []);
   return (
     <div>
-      <div className="overflow-x-auto mx-16 mt-16">
+      <div className="overflow-x-auto mx-10 mt-16">
         <table className="table w-full">
           <thead>
             <tr>

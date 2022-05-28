@@ -90,6 +90,12 @@ const Purchase = () => {
             {...register("productName", { required: true })}
           />
           <input
+            className="w-80 rounded border-2 border-primary  mb-5 py-4 px-10"
+            placeholder="Price"
+            value={products.price}
+            {...register("price", { required: true })}
+          />
+          <input
             className="w-80 rounded border-2 border-solid border-primary  mb-5 py-4 px-10"
             placeholder="Your Address"
             type="text"

@@ -19,10 +19,15 @@ const AddProducts = () => {
         })
         
         .then(res=> res.json())
-        .then(result => 
-          console.log(result))
-          toast("Item added successfully");
-          reset();
+        .then(inserted => {
+          if(inserted.insertedId){
+              toast.success('Item added successfully')
+              reset();
+          }
+          else{
+              toast.error('Failed to add the item');
+          }
+      })
       }
 
     return (

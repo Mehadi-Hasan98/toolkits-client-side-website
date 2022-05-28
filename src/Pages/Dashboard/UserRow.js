@@ -7,6 +7,7 @@ const UserRow = ({user, refetch}) => {
     const makeAdmin = () => {
         fetch(`https://blooming-stream-16978.herokuapp.com/user/admin/${email}`, {
             method: 'PUT'
+            
         })
         .then(res => res.json())
         .then(data => {
