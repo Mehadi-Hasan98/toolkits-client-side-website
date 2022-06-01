@@ -8,7 +8,7 @@ const Portfolio = () => {
       </h2>
       <div className="card w-96 font-mono mx-auto bg-base-100 shadow-xl">
   <div className="card-body items-center text-center">
-    <h2 className="text-xl"> Name: Mehadi Hasan</h2>
+    <h2 className="text-xl text-emerald-500"> Name: Mehadi Hasan</h2>
     <p> Email: Mehadihasan.phy@gmail.com</p>
     <p> Educational Background: <span className="text-blue-600">Bsc in physics</span> From NUB</p>
   </div>
