@@ -10,7 +10,7 @@ const Reviews = () => {
   }, []);
   return (
     <>
-      <h2 className="text-3xl font-mono text-blue-700 font-bold text-center mt-32">
+      <h2 className="text-3xl font-mono text-white font-bold text-center mt-32">
         Customer's Review
       </h2>
 

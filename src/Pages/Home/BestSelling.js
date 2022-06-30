@@ -4,7 +4,7 @@ const BestSelling = () => {
     return (
         <div>
             <div>
-            <h2 className='text-3xl text-center font-bold font-mono mb-20 mt-48 text-blue-700'>Our Best selling Tools </h2>
+            <h2 className='text-3xl text-center font-bold font-mono mb-20 mt-48 text-white'>Our Best selling Tools </h2>
             </div>
             <div className="carousel mb-48 carousel-center mx-auto max-w-lg p-4 space-x-4 bg-neutral rounded-box">
   <div className="carousel-item">

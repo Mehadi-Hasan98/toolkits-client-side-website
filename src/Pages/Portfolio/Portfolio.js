@@ -3,7 +3,7 @@ import React from "react";
 const Portfolio = () => {
   return (
     <div>
-      <h2 className="text-3xl font-bold font-mono text-center mb-32 mt-16 text-emerald-600">
+      <h2 className="text-3xl font-bold font-mono text-center mb-32 mt-16 text-white">
         My Portfolio
       </h2>
       <div className="card w-96 font-mono mx-auto bg-base-100 shadow-xl">
@@ -13,7 +13,7 @@ const Portfolio = () => {
     <p> Educational Background: <span className="text-blue-600">Bsc in physics</span> From NUB</p>
   </div>
 </div>
-      <h2 className="text-lg text-center font-semibold mt-8 font-mono">
+      <h2 className="text-lg text-center font-semibold mt-8 font-mono text-white">
         Known Technologies: <br/>
         <ul className="steps steps-vertical">
         <li className="step step-primary">HTML</li>
@@ -31,10 +31,10 @@ const Portfolio = () => {
       </ul>
       </h2>
       <br/>
-      <h2 className="text-xl text-center mt-10">My 3 Project's Live site link:</h2>
-      <p className="text-xl text-center mt-8 mb-8"><span className="font-bold font-mono text-blue-600">Car Dealer</span> : https://car-dealer-d2379.web.app/</p>
-      <p className="text-xl text-center mt-8 mb-8"><span className="font-bold font-mono text-blue-600">Creative Studio Photography</span>: https://creative-studio-photography.web.app/</p>
-      <p className="text-xl text-center mt-8 mb-10"><span className="font-bold font-mono text-blue-600">Gadget Store BD</span>: https://gadget-store-bd.netlify.app/</p>
+      <h2 className="text-xl text-center mt-10 text-white">My 3 Project's Live site link:</h2>
+      <p className="text-xl text-center mt-8 mb-8"><span className="font-bold font-mono text-white">Car Dealer :</span>  https://car-dealer-d2379.web.app/</p>
+      <p className="text-xl text-center mt-8 mb-8"><span className="font-bold font-mono text-white">Creative Studio Photography :</span> https://creative-studio-photography.web.app/</p>
+      <p className="text-xl text-center mt-8 mb-10"><span className="font-bold font-mono text-white">Gadget Store BD :</span> https://gadget-store-bd.netlify.app/</p>
     </div>
   );
 };

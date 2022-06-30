@@ -20,7 +20,7 @@ const Navbar = () => {
              <li>{user ? <button className="btn btn-ghost"  onClick={logout} >Log Out</button> : <Link to="/login">Login</Link>}</li>
     </>
     return (
-        <div className="navbar bg-base-100 px-12 font-mono">
+        <div className="navbar bg-#2980b9 text-white px-12 font-mono">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -30,7 +30,7 @@ const Navbar = () => {
              {menuItems}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl font-mono">ToolKits</a>
+          <a className="btn btn-ghost normal-case text-2xl font-mono font-bold text-rose-600">ToolKits</a>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0">

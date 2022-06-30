@@ -37,9 +37,9 @@ const MyProfile = () => {
     }
     return (
         <div>
-            <h2 className='text-2xl font-semibold text-emerald-600 text-center text-semiBold font-mono mt-10'>My Profile</h2>
-            <h1 className='text-xl text-center mt-10'>Name: <span className='text-cyan-700'>{user.displayName}</span></h1>
-            <h2 className='text-xl text-center mt-6'>Email: <span className='text-teal-600'>{user.email}</span></h2>
+            <h2 className='text-2xl font-semibold text-white text-center text-semiBold font-mono mt-10'>My Profile</h2>
+            <h1 className='text-xl text-center mt-10 text-gray-800'>Name: <span className='text-white'>{user.displayName}</span></h1>
+            <h2 className='text-xl text-center mt-6 text-gray-800'>Email: <span className='text-white'>{user.email}</span></h2>
             <h2>{}</h2>
 
             <form

@@ -32,7 +32,7 @@ const AddProducts = () => {
 
     return (
         <div className='font-mono'>
-            <h2 className='text-2xl font-mono font-bold text-center text-emerald-600 mt-16'>Add Products</h2>
+            <h2 className='text-2xl font-mono font-bold text-center text-white mt-16'>Add Products</h2>
             <form
           className="flex flex-col w-80 mx-auto mt-12 mb-12 form"
           onSubmit={handleSubmit(onSubmitForm)}

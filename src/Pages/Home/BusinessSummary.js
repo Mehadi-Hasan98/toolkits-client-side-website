@@ -5,7 +5,7 @@ import {GoTools} from 'react-icons/go';
 const BusinessSummary = () => {
   return (
     <>
-    <h2 className="text-3xl font-mono text-blue-700 font-bold text-center mt-32">Business Summary</h2>
+    <h2 className="text-3xl font-mono text-white font-bold text-center mt-32">Business Summary</h2>
         <div className="stats shadow w-9/12 md:ml-32 ml-10 mt-16 mb-28 font-mono">
       <div className="stat">
         <div className="stat-figure text-primary">
